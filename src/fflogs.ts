@@ -116,7 +116,7 @@ export interface Fights {
     code: string;
     fights: Fight[];
     friendlies: Friendly[];
-    phases: PhaseDefination[];
+    phases: PhaseDefinition[];
 }
 
 export interface Fight {
@@ -140,7 +140,7 @@ export interface Friendly {
     type: Class;
 }
 
-export interface PhaseDefination {
+export interface PhaseDefinition {
     boss: number;
     separatesWipes: boolean;
     phases: string[];

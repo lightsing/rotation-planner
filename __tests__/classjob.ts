@@ -19,5 +19,9 @@ describe('ClassJob', () => {
         expect(details).toBeDefined()
         expect(details.Abbreviation).toEqual('SGE')
         expect(details.Name).toEqual('sage')
+
+        expect(ClassJob.fromString('Sage')).toEqual(ClassJob.Sage)
+        expect(ClassJob.fromString('sage')).toEqual(ClassJob.Sage)
+        expect(ClassJob.fromString('s age ')).toEqual(ClassJob.Sage)
     })
 })

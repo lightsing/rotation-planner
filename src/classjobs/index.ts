@@ -1,2 +1,2 @@
-export * as Actions from './actions/index.ts'
-export * as Utils from './utils.ts'
+export * from './actions/index.ts'
+export * from './utils.ts'

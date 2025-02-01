@@ -29,6 +29,7 @@
   },
   "scripts": {
     "clean": "rimraf ./out ./utils/web ./utils/node ./es ./coverage ./dist",
+    "fmt": "prettier --write .",
     "watch:tsc": "tsc -b -w",
     "build:tsc": "tsc -b",
     "watch:rollup": "rollup -c -w",

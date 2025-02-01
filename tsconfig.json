@@ -34,7 +34,7 @@
     "target": "ES2018",
     "lib": ["ES2018"],
     "useDefineForClassFields": true,
-    "skipLibCheck": true, // skip all type checks for .d.ts files
+    "skipLibCheck": true // skip all type checks for .d.ts files
   },
   "references": [{ "path": "./src/tsconfig.json" }, { "path": "./__tests__/tsconfig.json" }],
   "files": []

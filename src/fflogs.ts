@@ -1,4 +1,4 @@
-import { IsHealerClass, IsMagicRangedDPSClass, IsMeleeDPSClass, IsPhysicalRangedDPSClass, type Class } from "utils";
+import { ClassJob } from "classjobs/classjob";
 
 const MERGE_RESOLUTION = 500;
 
@@ -137,7 +137,7 @@ export interface FightPhase {
 
 export interface Friendly {
     id: number;
-    type: Class;
+    type: string;
 }
 
 export interface PhaseDefinition {
@@ -214,10 +214,11 @@ export interface DamageAmount {
 
 export type TargetType = 'tank' | 'physical' | 'magical';
 
-const GetTargetType = (c: Class): TargetType => {
-    if (IsMeleeDPSClass(c) || IsPhysicalRangedDPSClass(c)) {
+const GetTargetType = (c: string): TargetType => {
+    const classjob = ClassJob.fromString(c);
+    if (ClassJob.isNonTankPhysical(classjob)) {
         return 'physical';
-    } else if (IsMagicRangedDPSClass(c) || IsHealerClass(c)) {
+    } else if (ClassJob.isMagical(classjob)) {
         return 'magical';
     }
     // no matter the class is tank or we don't know, we treat it as tank

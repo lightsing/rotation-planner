@@ -34,6 +34,7 @@
     "watch:rollup": "rollup -c -w",
     "build:rollup": "rollup -c",
     "build": "pnpm run build:tsc && pnpm run build:rollup",
+    "release": "pnpm run clean && pnpm run build && pnpm version prerelease && pnpm publish",
     "test": "vitest --coverage"
   },
   "devDependencies": {

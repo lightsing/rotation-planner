@@ -1,1 +1,1 @@
-console.log("Hello via Bun!");
+export * as FFLogs from './fflogs.ts'

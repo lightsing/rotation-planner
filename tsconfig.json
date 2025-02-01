@@ -1,34 +1,41 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./src",
-    "paths": { 
-      "@/*": ["src/*"]
-    },
+    // Projects
+    "composite": true,
+    "incremental": true,
 
-    // Enable latest features
-    "lib": ["ESNext", "DOM"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "jsx": "react-jsx",
-    "allowJs": true,
+    // Emit
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "stripInternal": true, // skip type emit for @internal types
 
-    // Bundler mode
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-
-    // Best practices
+    // Strict
     "strict": true,
-    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    // "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
 
-    // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    // Modules
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    // JavaScript Support
+    "allowJs": false,
+    "checkJs": false,
+
+    // Language and Environment
+    "target": "ES2018",
+    "lib": ["ES2018"],
+    "useDefineForClassFields": true,
+    "skipLibCheck": true, // skip all type checks for .d.ts files
+  },
+  "references": [{ "path": "./src/tsconfig.json" }, { "path": "./__tests__/tsconfig.json" }],
+  "files": []
 }

@@ -1,0 +1,28 @@
+.github/a
+package.json
+package-lock.json
+pnpm-lock.yaml
+**/CHANGELOG.md
+
+# VSCode personal settings
+.vscode/launch.json
+.vscode/tasks.json
+
+# JetBrain personal settings
+.idea
+
+# Build out
+dist/*
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+.env.test

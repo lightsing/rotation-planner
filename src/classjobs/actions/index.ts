@@ -1,18 +1,18 @@
-import { SageActions } from "./sage";
-import { GetPropertyWithUpgradeValue, type PropertyWithUpgrade } from "../utils";
-import { ClassJobKind } from "classjobs/classjob";
+import { ClassJobKind } from '../classjob.ts'
+import { GetPropertyWithUpgradeValue, type PropertyWithUpgrade } from '../utils.ts'
+import { SageActions } from './sage.ts'
 
-export type ActionType = "Ability" | "GCD";
+export type ActionType = 'Ability' | 'GCD'
 
 export interface Action {
-    id: PropertyWithUpgrade,
-    type: ActionType,
+    id: PropertyWithUpgrade
+    type: ActionType
     /// required class job level
-    classJobLevel: number,
+    classJobLevel: number
     /// cast time in 100ms
-    cast: PropertyWithUpgrade,
+    cast: PropertyWithUpgrade
     // recast time in 100ms
-    recast: PropertyWithUpgrade,
+    recast: PropertyWithUpgrade
 }
 
 export const Actions: Record<ClassJobKind, Action[]> = {
@@ -40,17 +40,21 @@ export const Actions: Record<ClassJobKind, Action[]> = {
 }
 
 export interface ActionDetails {
-    Icon: string,
-    IconHD: string,
+    Icon: string
+    IconHD: string
 
-    Name: string,
-    Description: string,
+    Name: string
+    Description: string
 }
 
 // use https://cafemaker.wakingsands.com for cn
-export const GetActionDetails = (action: Action, jobLevel?: number, baseUrl: string = "https://xivapi.com"): Promise<ActionDetails> => {
-    const id = GetPropertyWithUpgradeValue(action.id, jobLevel);
-    const url = `${baseUrl}/Action/${id}`;
+export const GetActionDetails = (
+    action: Action,
+    jobLevel?: number,
+    baseUrl: string = 'https://xivapi.com',
+): Promise<ActionDetails> => {
+    const id = GetPropertyWithUpgradeValue(action.id, jobLevel)
+    const url = `${baseUrl}/Action/${id}`
 
-    return fetch(url).then(response => response.json());
+    return fetch(url).then((response) => response.json())
 }

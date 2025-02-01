@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "incremental": false,
+    "noEmit": true,
+    "moduleResolution": "NodeNext",
+    "rootDir": "./",
+    "lib": ["ES2018", "DOM"],
+    "types": ["node"]
+  },
+  "include": ["./**/*.ts"],
+  "references": [{ "path": "../src" }]
+}

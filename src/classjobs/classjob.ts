@@ -101,7 +101,7 @@ export const ClassJob = {
         c === ClassJobKind.BlackMage ||
         c === ClassJobKind.Summoner ||
         c === ClassJobKind.RedMage ||
-        c == ClassJobKind.Pictomancer,
+        c === ClassJobKind.Pictomancer,
 
     /**
      * Check if the class job is a DPS
